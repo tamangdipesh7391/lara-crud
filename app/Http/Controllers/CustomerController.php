@@ -35,6 +35,8 @@ class CustomerController extends Controller
         $this->validate($request, [
             "username" => "required|string|min:3|max:255",
             "address" => "required|string|min:3|max:255",
+            "phone" => "required|string|min:3|max:255",
+
         ], [
             "username.required" => "Username required xa",
         ]);
@@ -43,6 +45,8 @@ class CustomerController extends Controller
         $customer = new Customer();
         $customer->username = $validatedData["username"];
         $customer->address = $validatedData["address"];
+        $customer->phone = $validatedData["phone"];
+
         $customer->save();
         return redirect()->route("customers.index")->with("success", "Customer created successfully");
     }
@@ -74,12 +78,16 @@ class CustomerController extends Controller
         $this->validate($request, [
             "username" => "required|string|min:3|max:255",
             "address" => "required|string|min:3|max:255",
+            "phone" => "required|string|min:3|max:255",
+
         ]);
 
         $validatedData = $request->all();
         $customer = Customer::where("id", $id)->firstOrFail();
         $customer->username = $validatedData["username"];
         $customer->address = $validatedData["address"];
+        $customer->phone = $validatedData["phone"];
+
         $customer->save();
         return redirect()->route("customers.index")->with("success", "Customer updated successfully");
     }

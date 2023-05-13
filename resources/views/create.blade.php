@@ -35,6 +35,16 @@
                 @enderror
             </a>
         </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" value="{{old('phone')}}" id="phone" name="phone">
+            <a class="text-danger" href="">
+                @error('phone')
+                    {{$message}}
+                @enderror
+            </a>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
    </form>
 

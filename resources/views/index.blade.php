@@ -34,6 +34,7 @@
                 <th scope="col">SN</th>
                 <th scope="col">Username</th>
                 <th scope="col">Address</th>
+                <th scope="col">Phone</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
             </tr>
@@ -44,6 +45,7 @@
                     <td>{{++$key}}</td>
                     <td>{{$customer->username}}</td>
                     <td>{{$customer->address}}</td>
+                    <td>{{$customer->phone}}</td>
                     <td>
                         <a href="{{route('customers.edit', $customer->id)}}" class="btn btn-primary">Edit</a>
                     </td>
